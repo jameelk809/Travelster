@@ -37,7 +37,6 @@
 										<!-- <li><a href="about.html">About us</a></li> -->
 										<!-- <li><a href="#">Services</a></li> -->
 										<!-- <li><a href="news.html">News</a></li> -->
-										
 										{% if user.is_authenticated %}
 										<li>Hello, {{user.first_name}}</li>
 										<li><a href="accounts/logout">Logout</a></li>
@@ -87,11 +86,14 @@
 			</div>
 			<div class="menu_content">
 				<ul>
-					<li><a href="{% static 'inex.html' %}">Home</a></li>
-					<li><a href="{% static 'about.html' %}">About us</a></li>
-					<li><a href="{% static '#' %}">Services</a></li>
-					<li><a href="{% static 'news.html' %}">News</a></li>
-					<li><a href="{% static 'contact.html' %}">Contact</a></li>
+					{% if user.is_authenticated %}
+					<li>Hello, {{user.first_name}}</li>
+					<li><a href="accounts/logout">Logout</a></li>
+					{% else %}
+					<li><a href="accounts/register">Register</a></li>
+					<li><a href="accounts/login">Login</a></li>
+					{% endif %}
+					<li><a href="accounts/contact">Contact Us</a></li>
 				</ul>
 			</div>
 			<div class="menu_social">
@@ -117,7 +119,8 @@
 
 					<!-- Slide -->
 					<div class="owl-item">
-						<div class="background_image" style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
+						<div class="background_image"
+							style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
 						<div class="home_slider_content_container">
 							<div class="container">
 								<div class="row">
@@ -135,7 +138,8 @@
 
 					<!-- Slide -->
 					<div class="owl-item">
-						<div class="background_image" style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
+						<div class="background_image"
+							style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
 						<div class="home_slider_content_container">
 							<div class="container">
 								<div class="row">
@@ -153,7 +157,8 @@
 
 					<!-- Slide -->
 					<div class="owl-item">
-						<div class="background_image" style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
+						<div class="background_image"
+							style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
 						<div class="home_slider_content_container">
 							<div class="container">
 								<div class="row">
@@ -173,9 +178,9 @@
 
 				<div class="home_page_nav">
 					<ul class="d-flex flex-column align-items-end justify-content-end">
-						<li><a href="{% static '#' %}" data-scroll-to="#destinations">Offers<span>01</span></a></li>
-						<li><a href="{% static '#' %}" data-scroll-to="#testimonials">Testimonials<span>02</span></a></li>
-						<li><a href="{% static '#' %}" data-scroll-to="#news">Latest<span>03</span></a></li>
+						<li><a href="/" data-scroll-to="#destinations">Offers<span>01</span></a></li>
+						<li><a href="/" data-scroll-to="#testimonials">Testimonials<span>02</span></a></li>
+						<li><a href="/" data-scroll-to="#news">Latest<span>03</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -213,8 +218,8 @@
 
 		<!-- Intro -->
 
-		<div class="intro">
-			<div class="intro_background" style="background-image:url({% static 'images/beach.svg' %})"></div>
+		<div class="intro bg-dark text-white" >
+			<!-- <div class="intro_background" style="background-image:url({% static 'images/beach.svg' %})"></div> -->
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -237,7 +242,8 @@
 								<!-- Intro Item -->
 								<div class="col-lg-4 intro_col">
 									<div class="intro_item d-flex flex-row align-items-end justify-content-start">
-										<div class="intro_icon"><img src="{% static 'images/wallet.svg' %}" alt=""></div>
+										<div class="intro_icon"><img src="{% static 'images/wallet.svg' %}" alt="">
+										</div>
 										<div class="intro_content">
 											<div class="intro_title">The Best Prices</div>
 											<div class="intro_subtitle">
@@ -250,7 +256,8 @@
 								<!-- Intro Item -->
 								<div class="col-lg-4 intro_col">
 									<div class="intro_item d-flex flex-row align-items-end justify-content-start">
-										<div class="intro_icon"><img src="{% static 'images/suitcase.svg' %}" alt=""></div>
+										<div class="intro_icon"><img src="{% static 'images/suitcase.svg' %}" alt="">
+										</div>
 										<div class="intro_content">
 											<div class="intro_title">Amazing Services</div>
 											<div class="intro_subtitle">
@@ -288,11 +295,13 @@
 								<div class="destination_image">
 									<img src="{{dest.img.url}}" alt="">
 									{% if dest.offer %}
-									<div class="spec_offer text-center"><a href="{% static '#' %}">Special Offer</a></div>
+									<div class="spec_offer text-center"><a href="{% static '#' %}">Special Offer</a>
+									</div>
 									{% endif %}
 								</div>
 								<div class="destination_content">
-									<div class="destination_title"><a href="{% static 'destinations.html' %}">{{dest.name}}</a></div>
+									<div class="destination_title"><a
+											href="{% static 'destinations.html' %}">{{dest.name}}</a></div>
 									<div class="destination_subtitle">
 										<p>{{dest.desc}}</p>
 									</div>
@@ -400,7 +409,8 @@
 										<div>02</div>
 										<div>june</div>
 									</div>
-									<div class="news_post_title"><a href="{% static '#' %}">Best tips to travel light</a></div>
+									<div class="news_post_title"><a href="{% static '#' %}">Best tips to travel
+											light</a></div>
 									<div class="news_post_category">
 										<ul>
 											<li><a href="{% static '#' %}">lifestyle & travel</a></li>
@@ -422,7 +432,8 @@
 										<div>01</div>
 										<div>june</div>
 									</div>
-									<div class="news_post_title"><a href="{% static '#' %}">Best tips to travel light</a></div>
+									<div class="news_post_title"><a href="{% static '#' %}">Best tips to travel
+											light</a></div>
 									<div class="news_post_category">
 										<ul>
 											<li><a href="{% static '#' %}">lifestyle & travel</a></li>
@@ -444,7 +455,8 @@
 										<div>29</div>
 										<div>may</div>
 									</div>
-									<div class="news_post_title"><a href="{% static '#' %}">Best tips to travel light</a></div>
+									<div class="news_post_title"><a href="{% static '#' %}">Best tips to travel
+											light</a></div>
 									<div class="news_post_category">
 										<ul>
 											<li><a href="{% static '#' %}">lifestyle & travel</a></li>
@@ -463,7 +475,8 @@
 					<!-- News Sidebar -->
 					<div class="col-xl-4">
 						<div class="travello">
-							<div class="background_image" style="background-image:url({% static 'images/travello.jpg' %})"></div>
+							<div class="background_image"
+								style="background-image:url({% static 'images/travello.jpg' %})"></div>
 							<div class="travello_content">
 								<div class="travello_content_inner">
 									<div></div>
@@ -487,8 +500,8 @@
 		<!-- Footer -->
 
 		<footer class="footer">
-			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/footer_1.jpg' %}"
-				data-speed="0.8"></div>
+			<div class="parallax_background parallax-window" data-parallax="scroll"
+				data-image-src="{% static 'images/footer_1.jpg' %}" data-speed="0.8"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -528,7 +541,8 @@
 							<div class="col-xl-4 footer_contact_col">
 								<div
 									class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-									<div class="footer_contact_icon"><img src="{% static 'images/sign.svg' %}" alt=""></div>
+									<div class="footer_contact_icon"><img src="{% static 'images/sign.svg' %}" alt="">
+									</div>
 									<div class="footer_contact_title">give us a call</div>
 									<div class="footer_contact_list">
 										<ul>
@@ -543,7 +557,8 @@
 							<div class="col-xl-4 footer_contact_col">
 								<div
 									class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-									<div class="footer_contact_icon"><img src="{% static 'images/trekking.svg' %}' %}" alt=""></div>
+									<div class="footer_contact_icon"><img src="{% static 'images/trekking.svg' %}' %}"
+											alt=""></div>
 									<div class="footer_contact_title">come & drop by</div>
 									<div class="footer_contact_list">
 										<ul style="max-width:190px">
@@ -557,7 +572,8 @@
 							<div class="col-xl-4 footer_contact_col">
 								<div
 									class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-									<div class="footer_contact_icon"><img src="{% static 'images/around.svg' %}" alt=""></div>
+									<div class="footer_contact_icon"><img src="{% static 'images/around.svg' %}" alt="">
+									</div>
 									<div class="footer_contact_title">send us a message</div>
 									<div class="footer_contact_list">
 										<ul>

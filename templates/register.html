@@ -124,7 +124,7 @@
                     <label for="username">Username</label><br>
                     <input type="text" id="username" name="username" placeholder="Usernamee"><br>
                     <label for="emai">E Mail</label><br>
-                    <input type="text" id="email" name="email" placeholder="eMail"><br>
+                    <input type="text" id="email" name="email" placeholder="E Mail"><br>
                     <label for="password">Choose your Password</label><br>
                     <input type="text" id="password" name="password1" placeholder="Password"><br>
                     <label for="conformpassword">Conform your Password</label><br>
@@ -133,9 +133,7 @@
                 </form>
                 <div>
                     {% for message in messages %}
-                    <h3>
-                        {{messages}}
-                    </h3>
+                        <h3>{{ message }}</h3>
                     {% endfor %}
                 </div>
             </div>
