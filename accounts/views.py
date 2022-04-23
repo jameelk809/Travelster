@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
+# from .forms import contact
 
 # Create your views here.
 
@@ -62,3 +63,14 @@ def logout(request):
 
 def contact(request):
     return render(request,'contact.html')
+
+
+# def ContactForm(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('/')
+#     form = ContactForm()
+#     context = {'form': form}
+#     return render(request, 'contact.html', context)
