@@ -1,3 +1,5 @@
+{% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html>
 
@@ -81,8 +83,7 @@
     </div>
     <div class="row">
       <div class="column">
-        <img src="https://unboxingdeals.com/wp-content/uploads/2017/11/Contactus.jpg" style="width:100%"
-          alt="Contact Us">
+        <img src="{% static 'images/ContactUs.jpg' %}" style="width:100%" alt="Contact Us">
       </div>
       <div class="column">
         <form action="/action_page.php">

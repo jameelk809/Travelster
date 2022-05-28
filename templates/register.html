@@ -1,34 +1,5 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-</head>
-
-<body>
-    <form action="register" method="post">
-        {% csrf_token %}
-        <input type="text" name="first_name" placeholder="First Name"><br>
-        <input type="text" name="last_name" placeholder="Last Name"><br>
-        <input type="text" name="username" placeholder="Username"><br>
-        <input type="text" name="email" placeholder="Email"><br>
-        <input type="password" name="password1" placeholder="Password"><br>
-        <input type="password" name="password2" placeholder="Confirm Password"><br>
-        <input type="submit">
-
-    </form>
-    <div>
-        {% for message in messages %}
-            <h3>{{ message }}</h3>
-        {% endfor %}
-    </div>
-</body>
-</html> -->
-
-
+{% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -111,7 +82,7 @@
         </div>
         <div class="row">
             <div class="column">
-                <img src="https://businessfirstfamily.com/wp-content/uploads/2017/04/register-a-business-name-1.jpg"
+                <img src="{% static 'images/Register.jpg' %}"
                     style="width:100%" alt="Register">
             </div>
             <div class="column">
