@@ -1,6 +1,8 @@
 <p align="center">
   <h1 align="center">TRAVELSTER</h1>
 A travel website designed using the Travello theme from Colorlib, with user login system, powered by Django.
+</p>
+
 ---
 
 ## Features
