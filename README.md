@@ -1,19 +1,22 @@
-# TRAVESTER
+<p align="center">
+  <h1 align="center">TRAVELSTER</h1>
 A travel website designed using the Travello theme from Colorlib, with user login system, powered by Django.
-
 ---
 
 ## Features
-
 - Beautiful UI.
-- Sign Up and Sign In feature.
-- Dummy data of flights added(Can't afford API XD).
-- Uses can publish travel blogs.
-
+- Register and Sign-In feature.
+- Contact Us page.
+- Mobile Compatible
+- User Friendly
+- Accessible to all users
+- Fast load time
+- Effective Navigation
+- Browser Consistency
+- Clean Code
 ---
 
 ## Built Using
-
 - BOOTSTRAP
 - DJANGO
 - POSTGRESQL
@@ -107,4 +110,7 @@ kamran
 
 - Contact Page
 ![Example screenshot](./img/screenshot3.png)
+---
+## Contact
+- I'm **Kamran Jameel**. <br>If you just want to say hi, please feel free to <a href="mailto:jameelk809@gmail.com">Email Me</a> !!
 ---
